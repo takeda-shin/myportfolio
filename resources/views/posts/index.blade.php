@@ -7,11 +7,25 @@
 </head>
 <body>
 
-  <div class="container">
-    <h1>
-      <a href="{{ url('/posts/create') }}" class="header-back">New</a>
-      My Portfolio
-    </h1>
+  <div class="container container-main">
+    <div class="container-main__title">
+      <h1>
+        ア　イ　ム　ヒ　ア
+      </h1>
+    </div>
+
+    <div class="container-main__subtitle">
+      <h2>
+        I am here. Next is...
+      </h2>
+    </div>
+
+    <div class="container-main__command">
+      <a href="{{ url('/posts/create') }}" class="header-back">新規作成</a>
+      <a href="#" class="header-back">ログイン</a>
+    </div>
+
+
     <ul>
       @foreach ($posts as $post)
       <li>
