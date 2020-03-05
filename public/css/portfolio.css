@@ -1,0 +1,234 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: sans-serif, sans-serif;
+  font-size: 14px;
+}
+
+.header {
+  width: 100%;
+  height: 5vh;
+  z-index: 9999;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(204, 204, 204, 0.5);
+}
+
+.header-back {
+  float: right;
+  margin-right: 30px;
+  line-height: 5vh;
+  text-decoration: none;
+  color: gray;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container-main__title {
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+  line-height: 80vh;
+}
+
+.container-main__title h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.container-main__message {
+  width: 50%;
+  padding: 0 25%;
+  height: 50vh;
+  text-align: center;
+  font-size: 20px;
+  line-height: 10vh;
+}
+
+.container__title {
+  width: 60%;
+  margin: 0 auto;
+  height: 10vh;
+  padding: 10vh 0 10vh;;
+}
+
+.container__title h1 {
+  font-size: 40px;
+  text-align: center;
+  line-height: 10vh;
+  border-bottom: 1px solid black;
+}
+
+.container-skills-box {
+  width: 60%;
+  margin: 0 auto;
+  height: 30vh;
+}
+
+.container-skills__title {
+  width: 30%;
+  height: 30vh;
+  float: left;
+  text-align: center;
+  line-height: 30vh;
+}
+
+.container-skills__skills {
+  width: 70%;
+  height: 30vh;
+  float: left;
+}
+
+.container__contents {
+  width: 60%;
+  margin: 0 auto;
+  height: 50vh;
+  padding: 5vh 0 15vh;
+  font-size:0;
+}
+
+.container__contents__item {
+  width : calc(100% / 3) ;
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 3%;
+}
+
+.container__contents__item__image {
+  width : 100%;
+  height: 80%;
+  background-color: gray;
+}
+
+.container__contents__item__title {
+  width : 100%;
+  height: 20%;
+  padding-top: 5px;
+}
+
+.container__contents__item__title h3 {
+  width : 100%;
+  height: 20%;
+  font-size: 20px;
+  font-weight: initial;
+}
+
+/* about */
+.container__about {
+  width: 60%;
+  margin: 0 auto;
+  height: 50vh;
+  padding: 5vh 0 15vh;
+}
+
+.container__about__person {
+  height: 30vh;
+  box-sizing: border-box;
+  padding: 0 10% 5vh;
+}
+
+.container__about__person__left {
+  height: 25vh;
+  width: 25%;
+  float: left;
+}
+.container__about__person__left__img {
+  height: 20vh;
+  width: 100%;
+  background-color: gray;
+}
+.container__about__person__left__sns {
+  height: 5vh;
+  width: 100%;
+}
+
+.container__about__person__left__sns__link {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin: 5% 5% 0;
+  background-color: black;
+}
+
+
+.container__about__person__right {
+  height: 25vh;
+  width: 75%;
+  float: left;
+}
+.container__about__person__right__name {
+  height: 10vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10%;
+}
+.container__about__person__right__name__jp {
+  height: 6vh;
+  width: 35%;
+  float: left;
+  font-size: 20px;
+  line-height: 6vh;
+}
+.container__about__person__right__name__eng {
+  height: 6vh;
+  width: 65%;
+  float: left;
+  line-height: 6vh;
+}
+.container__about__person__right__info {
+  height: 5vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10%;
+  display: flex;
+  align-items: center;
+}
+.container__about__person__right__info__title {
+  height: 5vh;
+  width: 20%;
+  line-height: 5vh;
+  font-size: 12px;
+  font-weight: bold;
+  float: left;
+}
+.container__about__person__right__info__text {
+  height: 5vh;
+  width: 80%;
+  font-size: 11px;
+  float: left;
+  line-height: 5vh;
+}
+.container__about__person__right__info__text__dev {
+  height: 5vh;
+  width: 80%;
+  font-size: 11px;
+  float: left;
+  flex: 1;
+}
+
+.container__about__biography {
+  height: 20vh;
+  box-sizing: border-box;
+  padding: 2vh 10% 2vh;
+}
+
+
+
+/* h1 {
+  font-size: 16px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+} */
+
+ul > li {
+  margin-bottom: 5px;
+}
