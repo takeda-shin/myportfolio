@@ -7,10 +7,14 @@
 </head>
 <body>
 
+  <div class="header">
+    <a href="{{ url('/posts/create') }}" class="header-back">Create</a>
+  </div>
+
   <div class="container container-main">
     <div class="container-main__title">
       <h1>
-        ア　イ　ム　ヒ　ア
+        My Portfolio
       </h1>
     </div>
 
@@ -20,12 +24,7 @@
       </h2>
     </div>
 
-    <div class="container-main__command">
-      <a href="{{ url('/posts/create') }}" class="header-back">新規作成</a>
-      <a href="#" class="header-back">ログイン</a>
-    </div>
-
-
+    <div class="container-main__content">
     <ul>
       @foreach ($posts as $post)
       <li>
@@ -39,6 +38,10 @@
       </li>
       @endforeach
     </ul>
+    </div>
+
+
+
     <script src="/js/main.js"></script>
 </body>
 </html>
