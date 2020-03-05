@@ -19,37 +19,35 @@
       <h3>きみの存在を世界に示そう！</h3>
     </div>
 
-    <div class="form">
-      <form method="post" action= "{{ url('/posts') }}">
-        {{ csrf_field() }}
-        <p>
-          タイトル
-        </p>
-        <p>
-          <input type="text" name="title" placeholder="enter title" value="{{ old('title') }}"> 
-          <!-- エラーメッセージ -->
-          @if ($errors->has('title'))
-          <span class="error">{{ $errors->first('title') }}</span>
-          @endif
-        </p>
-        <br>
-        <p>
-          キャッチコピー
-        </p>
-        <p>
-          <textarea name="body" placeholder="enter body">{{ old('body') }}</textarea>
-          <!-- エラーメッセージ -->
-          @if ($errors->has('body'))
-          <span class="error">{{ $errors->first('body') }}</span>
-          @endif
-        </p>
-        <br>
-        <p>
-          <input type="submit" value="作成">
-        </p>
-      </form>
-    </div>
-  </div>
+    <div class="container__contact-form">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form class="contact-form php-mail-form" method="post" action= "{{ url('/posts') }}">
+            {{ csrf_field() }}
+            <div class="form-group">
+              <input type="" name="title" class="form-control" id="contact-name" placeholder="Title" data-rule="minlen:4">
+              <!-- エラーメッセージ -->
+              @if ($errors->has('title'))
+              <span class="error">{{ $errors->first('title') }}</span>
+              @endif
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" name="body" id="contact-message" placeholder="Catch Copy" rows="5"></textarea>
+              <!-- エラーメッセージ -->
+              @if ($errors->has('body'))
+              <span class="error">{{ $errors->first('body') }}</span>
+              @endif
+            </div>
+
+            <div class="form-send">
+              <button type="submit" class="btn btn-large">Create</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+     </div>
 
 
 </body>
