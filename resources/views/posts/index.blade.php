@@ -8,7 +8,20 @@
 <body>
 
   <div class="header">
-    <a href="{{ url('/posts/create') }}" class="header-back">Create</a>
+    @guest
+      <a href="{{ route('login') }}" class="header-back">Login</a>
+      @if (Route::has('register'))
+      <a href="{{ route('register') }}" class="header-back">register</a>
+      @endif
+    @else
+     <a href="{{ url('/posts/create') }}" class="header-back">Create</a>
+     <a href="{{ route('login') }}" class="header-back">Logout</a>
+     <!-- <a class="header-back" href="{{ route('login') }}"
+        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+    </a> -->
+    @endguest
   </div>
 
   <div class="container container-main">

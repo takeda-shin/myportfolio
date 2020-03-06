@@ -20,3 +20,7 @@ Route::patch('/posts/{post}', 'PostsController@update');
 Route::delete('/posts/{post}', 'PostsController@destroy');
 Route::get('/abouts/{post}/edit', 'AboutsController@edit');
 Route::post('/abouts/{post}/abouts', 'AboutsController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
