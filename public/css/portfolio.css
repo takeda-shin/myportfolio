@@ -145,7 +145,12 @@ h1, h2, h3, h4, h5, h6, a, p{
 .container__about__person__left__img {
   height: 20vh;
   width: 100%;
-  background-color: gray;
+}
+
+.container__about__person__left__img p{
+  display: block;
+  height: 20vh;
+  width: 100%;
 }
 .container__about__person__left__sns {
   height: 5vh;

@@ -12,7 +12,7 @@
     <a href="{{ url('/') }}" class="header-back">Logout</a>
     <a href="{{ url('/') }}" class="header-back">Config</a>
     <a href="{{ url('/') }}" class="header-back">Contact</a>
-    <a href="{{ url('/') }}" class="header-back">JobSearch</a>
+    <a href="{{ url('/') }}" class="header-back">Resume</a>
     <a href="{{ action('AboutsController@edit', $post->id ) }}" class="header-back">About</a>
     <a href="{{ url('/') }}" class="header-back">Blog</a>
     <a href="{{ url('/') }}" class="header-back">Study</a>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form">
-      <form method="post" action= "{{ action('AboutsController@store', $post) }}">
+      <form method="post" action= "{{ action('AboutsController@store', $post) }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <p>
           苗字
@@ -78,7 +78,8 @@
           プロフィール画像
         </p>
         <p>
-          <input type="text" name="image" placeholder="例）aaaa.jpg">
+          <input type="file" class="btn" name="image" id="images" placeholder="例）aaaa.jpg">
+          <!-- <input type="file" name="image" placeholder="例）aaaa.jpg"> -->
         </p>
         <p>
           twitter
