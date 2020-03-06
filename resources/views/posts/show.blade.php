@@ -135,35 +135,36 @@
     </div>
   </div>
 
+  @foreach ($post->abouts as $post)
+  <!-- 表示するものがなければ項目ごと隠す -->
+  @isset($post)
   <div class="container container-about">
     <div class="container__title">
       <h1>ABOUT</h1>
     </div>
     <div class="container__about">
     <div class="container__about__person">
-
       <div class="container__about__person__left">
         <div class="container__about__person__left__img">
-          <img class="logo" src="image/image.jpg" alt="logo">
+        <img src="{{ asset('storage/image/' . $post->image) }}" alt="" style="height: 100%; width: 80%;" />
         </div>
-        <div class="container__about__person__left__sns">
+        <!-- <div class="container__about__person__left__sns">
           <div class="container__about__person__left__sns__link">
           </div>
           <div class="container__about__person__left__sns__link">
           </div>
           <div class="container__about__person__left__sns__link">
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="container__about__person__right">
-        @foreach ($post->abouts as $about)
         <div class="container__about__person__right__name">
           <div class="container__about__person__right__name__jp">
-            {{ $about->family_name }} {{ $about->first_name }}
+            {{ $post->family_name }} {{ $post->first_name }}
           </div>
           <div class="container__about__person__right__name__eng">
-            {{ $about->first_name_eng }} {{ $about->family_name_eng }}
+            {{ $post->first_name_eng }} {{ $post->family_name_eng }}
           </div>
         </div>
         <div class="container__about__person__right__info">
@@ -171,7 +172,7 @@
             拠点
           </div>
           <div class="container__about__person__right__info__text">
-            {{ $about->base }}
+            {{ $post->base }}
           </div>
         </div>
         <div class="container__about__person__right__info">
@@ -179,7 +180,7 @@
             連絡先
           </div>
           <div class="container__about__person__right__info__text">
-            {{ $about->email }}
+            {{ $post->email }}
           </div>
         </div>
         <div class="container__about__person__right__info">
@@ -187,24 +188,24 @@
             開発実績
           </div>
           <div class="container__about__person__right__info__text__dev">
-            {{ $about->performance }}
+            {{ $post->performance }}
           </div>
         </div>
-        @endforeach
       </div>
 
     </div>
-    @foreach ($post->abouts as $about)
     <div class="container__about__biography">
-      {{ $about->message }}
+      {{ $post->message }}
     </div>
-    @endforeach
+    
     </div>
   </div>
+  @endisset
+  @endforeach
 
   <div class="container container-jobsearch">
     <div class="container__title">
-      <h1>JOB SEARCH</h1>
+      <h1>RESUME</h1>
     </div>
     <div class="container__contents">
       <div class="container__contents__item">

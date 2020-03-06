@@ -15,6 +15,14 @@ class AboutsController extends Controller
     }
 
     public function store (Request $request, Post $post) {
+
+        $this->validate($request,[
+            'image' => 'file|image|mimes:jpg,jpeg,png'
+        ]);
+
+        $filename = $request->image->store('public/image');
+        $post->image = basename($filename);
+
         $about = new About([
             'family_name' => $request->family_name,
             'first_name' => $request->first_name,
@@ -23,12 +31,12 @@ class AboutsController extends Controller
             'base' => $request->base,
             'email' => $request->email,
             'performance' => $request->performance,
-            'image' => $request->image,
+            'image' => $post->image,
             'twitter' => $request->twitter,
             'facebook' => $request->facebook,
             'instagram' => $request->instagram,
-            'message' => $request->message]
-        );
+            'message' => $request->message
+        ]);
         $post->abouts()->save($about);
         return redirect()->action('PostsController@show', $post);
     }

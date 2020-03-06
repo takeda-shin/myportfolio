@@ -12,7 +12,7 @@
     <a href="{{ url('/') }}" class="header-back">Logout</a>
     <a href="{{ url('/') }}" class="header-back">Config</a>
     <a href="{{ url('/') }}" class="header-back">Contact</a>
-    <a href="{{ url('/') }}" class="header-back">JobSearch</a>
+    <a href="{{ url('/') }}" class="header-back">Resume</a>
     <a href="{{ action('AboutsController@edit', $post->id ) }}" class="header-back">About</a>
     <a href="{{ url('/') }}" class="header-back">Blog</a>
     <a href="{{ url('/') }}" class="header-back">Study</a>
