@@ -48,7 +48,7 @@
     </div>
   </div> -->
 
-  <div class="container container-works">
+  <!-- <div class="container container-works">
     <div class="container__title">
       <h1>WORKs</h1>
     </div>
@@ -75,9 +75,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="container container-study">
+  <!-- <div class="container container-study">
     <div class="container__title">
       <h1>STUDY</h1>
     </div>
@@ -104,9 +104,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="container container-blog">
+  <!-- <div class="container container-blog">
     <div class="container__title">
       <h1>BLOG</h1>
     </div>
@@ -133,7 +133,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   @foreach ($post->abouts as $post)
   <!-- 表示するものがなければ項目ごと隠す -->
@@ -203,7 +203,7 @@
   @endisset
   @endforeach
 
-  <div class="container container-jobsearch">
+  <!-- <div class="container container-jobsearch">
     <div class="container__title">
       <h1>RESUME</h1>
     </div>
@@ -230,7 +230,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="container container-contact">
     <div class="container__title">

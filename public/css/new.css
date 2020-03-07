@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5, h6 a p{
   width: 100%;
   height: 100vh;
   background-color: rgba(242,242,242,0.5);
+  box-sizing: border-box;
 }
 
 .container-main__title {
@@ -56,9 +57,9 @@ h1, h2, h3, h4, h5, h6 a p{
 
 .form {
   box-sizing: border-box;
-  height: 70vh;
+  height: 50vh;
   width: 50%;
-  padding: 10vh 0 10vh;
+  margin: 10vh 0 10vh;
   margin: 0 auto;
   overflow: scroll;
 }
@@ -99,6 +100,7 @@ input[type="submit"] {
 
 .contact-form {
   padding-bottom: 40px;
+  box-sizing: border-box;
 }
 
 .contact-form label {
@@ -204,4 +206,10 @@ input[type="submit"] {
   padding: 15px;
   font-weight: 600;
   margin: 15px 0;
+}
+
+.container-main__form {
+  padding: 10vh 0 10vh;
+  box-sizing: border-box;
+  height: 20vh;
 }
