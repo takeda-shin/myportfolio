@@ -12,4 +12,8 @@ class Post extends Model
     public function abouts() {
         return $this->hasMany('App\About');
     }
+
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
 }
