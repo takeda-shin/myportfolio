@@ -15,7 +15,7 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('post_id');
+            $table->bigInteger('post_id')->unsigned();
             $table->string('family_name');
             $table->string('first_name');
             $table->string('family_name_eng');
