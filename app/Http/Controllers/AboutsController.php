@@ -9,6 +9,10 @@ use App\About;
 class AboutsController extends Controller
 {
 
+    public function index(){
+        return view('abouts.index');
+    }
+
     public function edit ($id) {
         $post = Post::findOrFail($id);
         return view('abouts.edit')->with('post', $post);
