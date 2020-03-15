@@ -21,6 +21,8 @@ Route::delete('/posts/{post}', 'PostsController@destroy')->middleware('auth');
 Route::get('/abouts/{post}/edit', 'AboutsController@edit')->middleware('auth');
 Route::post('/abouts/{post}/abouts', 'AboutsController@store')->middleware('auth');
 
+Route::get('/abouts', 'AboutsController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
