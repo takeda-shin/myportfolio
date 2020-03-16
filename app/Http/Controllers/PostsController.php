@@ -30,10 +30,6 @@ class PostsController extends Controller
         return view('posts.show', $params);
     }
 
-    // public function create () {
-    //     return view('posts.create');
-    // }
-
     public function create() {
         $authUser = Auth::user(); // 認証ユーザー取得
         // $items = Post::with('user')->get();

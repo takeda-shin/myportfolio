@@ -1,163 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>{{ $post->title }}</title>
-  <!-- <link rel="stylesheet" href="/css/styles.css"> -->
-  <link rel="stylesheet" href="/css/portfolio.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" conyent="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href= "/css/normalize.css">
+  <link rel="stylesheet" href= "/css/portfolio_design.css">
 </head>
+
 <body>
-  <!-- <div class="container">
-    <h1>{{ $post->title }}</h1>
-    <p>{!! nl2br(e($post->body)) !!}</p>
-  </div> -->
-
-  <div class="header">
-    <a href="{{ url('/') }}" class="header-back">Back</a>
-    <a href= "{{ action('PostsController@edit', $post->id ) }}" class="header-back">Edit</a>
+  <div class="menu-bar">
+    <a href="{{ url('/') }}" class="menu-button">Back</a>
+    <a href= "{{ action('PostsController@edit', $post->id ) }}" class="menu-button">Edit</a>
   </div>
-
-  <div class="container container-main">
-    <div class="container-main__title">
-      <h1>{{ $post->title }}</h1>
+  
+  <header class="header">
+    <p class="site-title-sub">Web engineer's portfolio</p>
+    <h1 class="site-title">{{ $post->title }}</h1>
+    <p class="site-description">{!! nl2br(e($post->body)) !!}</p>
+    <div class="buttons">
+      <a class="button" href="#about">LEARN MORE</a>
+      <a class="button button-showy" href="#contact">SEND MESSAGE</a>
     </div>
-    <div class="container-main__message">
-      <p>{!! nl2br(e($post->body)) !!}</p>
-    </div>
-  </div>
-
-  <!-- <div class="container container-skills">
-    <div class="container__title">
-      <h1>SKILLs</h1>
-    </div>
-    <div class="container-skills-box">
-      <div class="container-skills__title">
-        <h3>program</h3>
-      </div>
-      <div class="container-skills__skills">
-        aaa
-      </div>
-    </div>
-    <div class="container-skills-box">
-      <div class="container-skills__title">
-        <h3>design</h3>
-      </div>
-      <div class="container-skills__skills">
-        aaa
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <div class="container container-works">
-    <div class="container__title">
-      <h1>WORKs</h1>
-    </div>
-    <div class="container__contents">
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <div class="container container-study">
-    <div class="container__title">
-      <h1>STUDY</h1>
-    </div>
-    <div class="container__contents">
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <div class="container container-blog">
-    <div class="container__title">
-      <h1>BLOG</h1>
-    </div>
-    <div class="container__contents">
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-    </div>
-  </div> -->
+  </header>
 
   @foreach ($post->abouts as $post)
   <!-- 表示するものがなければ項目ごと隠す -->
   @isset($post)
-  <div class="container container-about">
-    <div class="container__title">
-      <h1>ABOUT</h1>
-    </div>
+  <section class="about" id="about">
+    <h2 class="heading heading-black">ABOUT ME</h2>
+    
     <div class="container__about">
     <div class="container__about__person">
       <div class="container__about__person__left">
         <div class="container__about__person__left__img">
         <img src="{{ asset('storage/image/' . $post->image) }}" alt="" style="height: 100%; width: 80%;" />
         </div>
-        <!-- <div class="container__about__person__left__sns">
-          <div class="container__about__person__left__sns__link">
-          </div>
-          <div class="container__about__person__left__sns__link">
-          </div>
-          <div class="container__about__person__left__sns__link">
-          </div>
-        </div> -->
       </div>
-
       <div class="container__about__person__right">
         <div class="container__about__person__right__name">
           <div class="container__about__person__right__name__jp">
@@ -192,87 +73,82 @@
           </div>
         </div>
       </div>
-
     </div>
     <div class="container__about__biography">
       {{ $post->message }}
     </div>
     
     </div>
-  </div>
+  </section>
   @endisset
   @endforeach
 
-  <!-- <div class="container container-jobsearch">
-    <div class="container__title">
-      <h1>RESUME</h1>
+  <section class="works">
+    <h2 class="heading">WORKS</h2>
+    <div class="works-wrapper">
+      <div class="work-box tree">
+        <img class="work-image" src="images/tree.jpg" alt="制作事例１">
+        <div class="work-description">
+          <div class="work-description-inner">
+            <p class="work-text">
+              ひとつめの制作事例が入ります。<br>
+              簡単な説明が入ります。<br>
+              使用ツール：XXX, XXX, XXX<br>
+              <a href="#" class="button button-ghost">READ MORE</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="work-box building">
+        <img class="work-image" src="images/building.jpg" alt="制作事例２">
+        <div class="work-description">
+          <div class="work-description-inner">
+            <p class="work-text">
+              ふたつめの制作事例が入ります。<br>
+              簡単な説明が入ります。<br>
+              使用ツール：XXX, XXX, XXX<br>
+              <a href="#" class="button button-ghost">READ MORE</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="work-box lake">
+        <img class="work-image" src="images/lake.jpg" alt="制作事例３">
+        <div class="work-description">
+          <div class="work-description-inner">
+            <p class="work-text">
+              みっつめの制作事例が入ります。<br>
+              簡単な説明が入ります。<br>
+              使用ツール：XXX, XXX, XXX<br>
+              <a href="#" class="button button-ghost">READ MORE</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="work-box sky">
+        <img class="work-image" src="images/sky.jpg" alt="制作事例４">
+        <div class="work-description">
+          <div class="work-description-inner">
+            <p class="work-text">
+              よっつめの制作事例が入ります。<br>
+              簡単な説明が入ります。<br>
+              使用ツール：XXX, XXX, XXX<br>
+              <a href="#" class="button button-ghost">READ MORE</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container__contents">
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-      <div class="container__contents__item">
-        <div class="container__contents__item__image">
-        </div>
-        <div class="container__contents__item__title">
-          <h3>program</h3>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <div class="container container-contact">
-    <div class="container__title">
-      <h1>CONTACT</h1>
-    </div>
-    <div class="container__contact-form">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
-
-            <div class="form-group">
-              <input type="name" name="name" class="form-control" id="contact-name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
-              <div class="validate"></div>
-            </div>
-
-            <div class="form-group">
-              <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
-              <div class="validate"></div>
-            </div>
-
-            <div class="loading"></div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-
-            <div class="form-send">
-              <button type="submit" class="btn btn-large">Send Message</button>
-            </div>
-
-          </form>
-        </div>
-      </div>
-     </div>
-
-  </div>
-
+  </section>
+  <section class="contact" id="contact">
+    <h2 class="heading">CONTACT</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="NAME">
+      <input type="email" name="email" placeholder="E-MAIL">
+      <textarea name="message" placeholder="MESSAGE"></textarea>
+      <input type="submit" value="SEND">
+    </form>
+  </section>
+  <script src="/js/placeholders.min.js"></script>
 </body>
 </html>
