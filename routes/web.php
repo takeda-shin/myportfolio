@@ -27,4 +27,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::resource('/posts', 'PostsController')->middleware('auth');
+// CONTACT
+Route::post('/contact/{post}/send', 'ContactController@send')->name('contact.send');
+Route::get('/contact/result', 'ContactController@result')->name('contact.result');
+

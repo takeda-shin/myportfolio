@@ -21,7 +21,6 @@
     <a href="{{ action('AboutsController@edit', $post->id ) }}" class="header-back">About</a>
     <a href="{{ url('/') }}" class="header-back">Blog</a>
     <a href="{{ url('/') }}" class="header-back">Works</a>
-    <!-- <a href="{{ url('/') }}" class="header-back">Skills</a> -->
     <a href= "{{ action('PostsController@edit', $post->id ) }}" class="header-back">Title</a>
   </div>
 
