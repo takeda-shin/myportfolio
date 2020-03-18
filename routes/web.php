@@ -31,3 +31,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/contact/{post}/send', 'ContactController@send')->name('contact.send');
 Route::get('/contact/result', 'ContactController@result')->name('contact.result');
 
+Route::group(['middleware' => 'basicauth'], function() {
+  //Basic認証
+  //例
+  Route::get('/', 'PostsController@index');
+});
+
