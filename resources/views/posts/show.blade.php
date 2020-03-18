@@ -140,12 +140,32 @@
       </div>
     </div>
   </section>
+
   <section class="contact" id="contact">
     <h2 class="heading">CONTACT</h2>
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="NAME">
-      <input type="email" name="email" placeholder="E-MAIL">
-      <textarea name="message" placeholder="MESSAGE"></textarea>
+    <form method="POST" action="{{ route('contact.send', $post->id) }}" class="contact-form">
+      {{ csrf_field() }}
+
+      <input type="text" name="name" value="{{ old('name') }}" placeholder="NAME">
+      @if ($errors->has('name'))
+          <span class="help-block">
+              <strong>{{ $errors->first('name') }}</strong>
+          </span>
+      @endif
+
+      <input type="email" name="email" value="{{ old('email') }}" placeholder="E-MAIL">
+      @if ($errors->has('email'))
+          <span class="help-block">
+              <strong>{{ $errors->first('email') }}</strong>
+          </span>
+      @endif
+
+      <textarea name="message" placeholder="MESSAGE" value="{{ old('message') }}">{{ old('message') }}</textarea>
+      @if ($errors->has('message'))
+          <span class="help-block">
+              <strong>{{ $errors->first('message') }}</strong>
+          </span>
+      @endif
       <input type="submit" value="SEND">
     </form>
   </section>
