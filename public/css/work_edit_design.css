@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #151515 url("../images/bg.jpeg") no-repeat fixed left bottom;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: Raleway, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.menu-bar {
+  width: 100%;
+  height: 5vh;
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu-button {
+  float: right;
+  margin-right: 30px;
+  line-height: 5vh;
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-button:hover {
+  color: #333;
+}
+
+.side-header {
+  height: 100vh;
+  width: 25%;
+  display: inline-block;
+}
+
+.edit-title {
+  height: 30vh;
+  width: 100%;
+  float: left;
+  line-height: 30vh;
+  margin: 0 auto;
+  font-size: 5rem;
+}
+
+.button-box {
+  height: 70vh;
+  width: 100%;
+  float: left;
+}
+
+.button {
+  display: inline-block;
+  width: 200px;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #f1b400;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+}
+.button:hover{
+  opacity: 0.9;
+}
+
+.container {
+  display: inline-block;
+  height: 100vh;
+  width: 75%;
+  float: right;
+}
+
+.box-line {
+  display: block;
+  height: 30vh;
+}
+
+.add-box {
+  padding-top: 20px;
+  width: calc(100% / 3);
+  height: 100%;
+}
+.image {
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+  height: 70%;
+  border: solid 2px;
+  border-radius: 10px;
+}
+.icon {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.box {
+  width: calc(100% / 3);
+  height: 100%;
+  float: left;
+}
