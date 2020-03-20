@@ -18,8 +18,18 @@ Route::post('/posts', 'PostsController@store')->middleware('auth');
 Route::get('/posts/{post}/edit', 'PostsController@edit')->middleware('auth');
 Route::patch('/posts/{post}', 'PostsController@update')->middleware('auth');
 Route::delete('/posts/{post}', 'PostsController@destroy')->middleware('auth');
+
+// ABOUT
+Route::get('/abouts/{post}/create', 'AboutsController@create')->middleware('auth');
 Route::get('/abouts/{post}/edit', 'AboutsController@edit')->middleware('auth');
 Route::post('/abouts/{post}/abouts', 'AboutsController@store')->middleware('auth');
+
+// WORK
+Route::get('/works/{post}/', 'WorksController@index')->middleware('auth');
+Route::get('/works/{post}/create', 'WorksController@create')->middleware('auth');
+Route::get('/works/{post}/edit', 'WorksController@edit')->middleware('auth');
+
+
 
 Route::get('/abouts', 'AboutsController@index');
 
