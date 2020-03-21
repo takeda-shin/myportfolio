@@ -58,7 +58,7 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->body = $request->body;
         $post->save();
-        return redirect('/');
+        return view('posts.show')->with('post', $post);
     }
 
     public function destroy($id) {
