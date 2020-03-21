@@ -21,22 +21,30 @@
       edit WORKS
     </div>
     <div class="button-box">
-      <a class="button" href="#title">TITLE</a>
-      <a class="button" href="#abouts">ABOUTS</a>
+      <a class="button" href="{{ action('PostsController@edit', $post->id ) }}">TITLE</a>
+      @foreach ($post->abouts as $about)
+      @isset($about)
+        <a href="{{ action('AboutsController@edit', $post->id ) }}" class="button">ABOUTS</a>
+      @else
+        <a href="{{ action('AboutsController@create', $post->id ) }}" class="button">ABOUTS</a>
+      @endisset
+      @endforeach
+      <a class="button" href="action('WorksController@index', $post->id">WORKS</a>
       <a class="button" href="#others">OTHERS</a>
-      <a class="button" href="#others">BACK</a>
+      <a class="button" href="{{ action('PostsController@show', $post->id ) }}">BACK</a>
     </div>
   </div>
   <div class="container">
     <div class="box-line">
       <div class="add-box">
-        <div class="image">
+        <div class="image add-image">
+          <a class="add-link" href="{{ action('WorksController@create', $post->id ) }}"></a>
           <i class="icon fa fa-plus"></i>
         </div>
         <p>WORKを追加</p>
       </div>
     </div>
-    
+
     <div class="box-line">
       <div class="box">
         <div class="image">
@@ -73,3 +81,5 @@
       </div>
     </div>
   </div>
+</body>
+</html>

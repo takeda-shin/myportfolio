@@ -78,9 +78,11 @@ body {
 
 .container {
   display: inline-block;
+  padding: 5vh 0;
   height: 100vh;
   width: 75%;
   float: right;
+  overflow: auto;
 }
 
 .box-line {
@@ -101,6 +103,18 @@ body {
   border: solid 2px;
   border-radius: 10px;
 }
+.add-image {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.add-image:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.add-link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
 .icon {
   display: inline-block;
   position: absolute;
@@ -112,4 +126,61 @@ body {
   width: calc(100% / 3);
   height: 100%;
   float: left;
+}
+
+/* ADD EDIT FORM*/
+.add-contents {
+  padding: 40px 0 40px;
+}
+.add-form {
+  width: 50%;
+  margin: 50px auto 0;
+}
+.add-form input[type=text],
+.add-form input[type=url],
+.add-form input[type=file],
+.add-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+.add-form textarea {
+  height: 100px;
+}
+.add-form input[type=text]:focus,
+.add-form input[type=url]:focus,
+.add-form input[type=file]:focus,
+.add-form textarea:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset;
+}
+.add-form input[type=submit] {
+  display: block;
+  width: 200px;
+  margin: 40px auto 0;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+.add-form input[type=submit]:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.title {
+  text-align: left;
+}
+.required {
+  color: white;
+  background-color:  #f1b400;
+}
+.any {
+  color: white;
+  background-color:  gray;
 }

@@ -11,4 +11,14 @@ class WorksController extends Controller
         $post = Post::findOrFail($id);
         return view('works.index')->with('post', $post);
     }
+
+    public function create ($id) {
+        $post = Post::findOrFail($id);
+        return view('works.create')->with('post', $post);
+    }
+
+    public function edit ($id) {
+        $post = Post::findOrFail($id);
+        return view('works.create')->with('post', $post);
+    }
 }
