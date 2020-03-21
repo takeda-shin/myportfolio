@@ -23,6 +23,7 @@ Route::delete('/posts/{post}', 'PostsController@destroy')->middleware('auth');
 Route::get('/abouts/{post}/create', 'AboutsController@create')->middleware('auth');
 Route::get('/abouts/{post}/edit', 'AboutsController@edit')->middleware('auth');
 Route::post('/abouts/{post}/abouts', 'AboutsController@store')->middleware('auth');
+Route::patch('/abouts/{post}', 'AboutsController@update')->middleware('auth');
 
 // WORK
 Route::get('/works/{post}/', 'WorksController@index')->middleware('auth');
@@ -43,7 +44,6 @@ Route::get('/contact/result', 'ContactController@result')->name('contact.result'
 
 Route::group(['middleware' => 'basicauth'], function() {
   //Basic認証
-  //例
   Route::get('/', 'PostsController@index');
 });
 
