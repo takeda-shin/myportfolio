@@ -20,7 +20,7 @@
     </div>
   </header>
   <section class="about" id="about">
-    <h2 class="heading">ABOUT ME</h2>
+    <h2 class="heading">{{ $post->title }}</h2>
     <p class="about-text">
       はじめまして。日本でWebデザイナーをしています。<br>
       デザインの専門学校を卒業し、制作会社での業務経験を経て、現在はフリーランスとして働いています。

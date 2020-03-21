@@ -13,6 +13,10 @@ class Post extends Model
         return $this->hasMany('App\About');
     }
 
+    public function works() {
+        return $this->hasMany('App\Work');
+    }
+
     public function user() {
         return $this->belongsTo('App\User');
     }
