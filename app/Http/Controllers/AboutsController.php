@@ -13,6 +13,11 @@ class AboutsController extends Controller
         return view('abouts.index');
     }
 
+    public function create ($id) {
+        $post = Post::findOrFail($id);
+        return view('abouts.create')->with('post', $post);
+    }
+
     public function edit ($id) {
         $post = Post::findOrFail($id);
         return view('abouts.edit')->with('post', $post);
@@ -44,4 +49,29 @@ class AboutsController extends Controller
         $post->abouts()->save($about);
         return redirect()->action('PostsController@show', $post);
     }
+
+    public function update (Request $request, Post $post) {
+        $this->validate($request,[
+            'image' => 'file|image|mimes:jpg,jpeg,png'
+        ]);
+
+        $filename = $request->image->store('public/image');
+        $post->image = basename($filename);
+
+        $about->family_name = $request->family_name;
+        $about->first_name = $request->first_name;
+        $about->family_name_eng = $request->family_name_eng;
+        $about->first_name_eng = $request->first_name_eng;
+        $about->base = $request->base;
+        $about->email = $request->email;
+        $about->performance = $request->performance;
+        $about->image = $post->image;
+        $about->twitter = $request->twitter;
+        $about->facebook = $request->facebook;
+        $about->instagram = $request->instagram;
+        $about->message = $request->message;
+        $post->abouts()->save($about);
+        return redirect()->action('PostsController@show', $post);
+    }
+
 }
