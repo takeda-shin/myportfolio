@@ -50,13 +50,15 @@ class AboutsController extends Controller
         return redirect()->action('PostsController@show', $post);
     }
 
-    public function update (Request $request, Post $post) {
+    public function update (Request $request, About $about) {
         $this->validate($request,[
             'image' => 'file|image|mimes:jpg,jpeg,png'
         ]);
 
         $filename = $request->image->store('public/image');
-        $post->image = basename($filename);
+        $about->image = basename($filename);
+
+        $post = Post::findOrFail($about['post_id']);
 
         $about->family_name = $request->family_name;
         $about->first_name = $request->first_name;
@@ -65,7 +67,6 @@ class AboutsController extends Controller
         $about->base = $request->base;
         $about->email = $request->email;
         $about->performance = $request->performance;
-        $about->image = $post->image;
         $about->twitter = $request->twitter;
         $about->facebook = $request->facebook;
         $about->instagram = $request->instagram;

@@ -37,7 +37,7 @@
   </div>
   <div class="container">
     <section class="add-contents">
-      <form method="POST" action="{{ action('AboutsController@update', $post) }}" class="add-form" enctype="multipart/form-data">
+      <form method="POST" action="{{ action('AboutsController@update', $about) }}" class="add-form" enctype="multipart/form-data">
         {{ csrf_field() }}
         {{ method_field('patch') }}
         <div class="title">
