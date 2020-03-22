@@ -29,7 +29,7 @@
         <a href="{{ action('AboutsController@create', $post->id ) }}" class="button">ABOUTS</a>
       @endisset
       @endforeach
-      <a class="button" href="action('WorksController@index', $post->id">WORKS</a>
+      <a class="button" href="{{ action('WorksController@index', $post->id) }}">WORKS</a>
       <a class="button" href="#others">OTHERS</a>
       <a class="button" href="{{ action('PostsController@show', $post->id ) }}">BACK</a>
     </div>
@@ -45,11 +45,13 @@
       </div>
     </div>
 
+    @foreach ($post->works as $work)
     <div class="box-line">
       <div class="box">
         <div class="image">
+        <a href="{{ action('WorksController@edit', $work->id ) }}"><img src="{{ asset('storage/image/' . $work->image) }}" alt="" style="height: 100%; width: 80%;" /></a>
         </div>
-        <p>title</p>
+        <p>{{ $work->title }}</p>
       </div>
       <div class="box">
         <div class="image">
@@ -80,6 +82,7 @@
         <p>title</p>
       </div>
     </div>
+    @endforeach
   </div>
 </body>
 </html>
