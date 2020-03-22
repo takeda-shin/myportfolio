@@ -26,9 +26,11 @@ Route::post('/abouts/{post}/abouts', 'AboutsController@store')->middleware('auth
 Route::patch('/abouts/{post}', 'AboutsController@update')->middleware('auth');
 
 // WORK
-Route::get('/works/{post}/', 'WorksController@index')->middleware('auth');
+Route::get('/works/{post}', 'WorksController@index')->middleware('auth');
 Route::get('/works/{post}/create', 'WorksController@create')->middleware('auth');
-Route::get('/works/{post}/edit', 'WorksController@edit')->middleware('auth');
+Route::post('/works/{post}', 'WorksController@store')->middleware('auth');
+Route::get('/works/{work}/edit/', 'WorksController@edit')->middleware('auth');
+Route::patch('/works/{work}', 'WorksController@update')->middleware('auth');
 
 
 
