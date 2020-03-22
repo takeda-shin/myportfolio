@@ -34,15 +34,17 @@
       <a class="button" href="{{ action('PostsController@show', $post->id ) }}">BACK</a>
     </div>
   </div>
+  @foreach ($post->works as $work)
   <div class="container">
     <section class="add-contents" id="contact">
-      <form method="POST" action="#" class="add-form" enctype="multipart/form-data">
+      <form method="POST" action="{{ action('WorksController@update', $work) }}" class="add-form" enctype="multipart/form-data">
         {{ csrf_field() }}
+        {{ method_field('patch') }}
         <div class="title">
           <span>制作物のタイトル</span>
           <span class="required">必須</span>
         </div>
-        <input type="text" name="title" value="{{ old('title') }}" placeholder="TITLE">
+        <input type="text" name="title" value="{{ old('title', $work->title) }}" placeholder="TITLE">
         @if ($errors->has('title'))
             <span class="help-block">
                 <strong>{{ $errors->first('title') }}</strong>
@@ -53,7 +55,7 @@
           <span>紹介文</span>
           <span class="required">必須</span>
         </div>
-        <textarea name="introduction" placeholder="例）phpの練習を兼ねて作成しました。" value="{{ old('introduction') }}">{{ old('introduction') }}</textarea>
+        <textarea name="introduction" placeholder="例）phpの練習を兼ねて作成しました。" value="{{ old('introduction', $work->introduction) }}">{{ old('introduction', $work->introduction) }}</textarea>
         @if ($errors->has('introduction'))
             <span class="help-block">
                 <strong>{{ $errors->first('introduction') }}</strong>
@@ -64,7 +66,7 @@
           <span>開発言語・ソフトウェアなど</span>
           <span class="required">必須</span>
         </div>
-        <textarea name="language" placeholder="例）HTML,CSS,PHP..." value="{{ old('language') }}">{{ old('language') }}</textarea>
+        <textarea name="language" placeholder="例）HTML,CSS,PHP..." value="{{ old('language', $work->language) }}">{{ old('language', $work->language) }}</textarea>
         @if ($errors->has('language'))
             <span class="help-block">
                 <strong>{{ $errors->first('language') }}</strong>
@@ -75,7 +77,7 @@
           <span>制作物イメージ画像</span>
           <span class="required">必須</span>
         </div>
-        <input type="file" class="btn" name="image" id="images" placeholder="例）aaaa.jpg">
+        <input type="file" class="btn" name="image" id="images" placeholder="例）aaaa.jpg" value="{{ old('image', $work->image) }}">
         @if ($errors->has('image'))
             <span class="help-block">
                 <strong>{{ $errors->first('image') }}</strong>
@@ -86,7 +88,7 @@
           <span>制作物 URL</span>
           <span class="required">必須</span>
         </div>
-        <input type="url" name="link" value="{{ old('link') }}" placeholder="http://...">
+        <input type="url" name="link" value="{{ old('link', $work->link) }}" placeholder="http://...">
         @if ($errors->has('link'))
             <span class="help-block">
                 <strong>{{ $errors->first('link') }}</strong>
@@ -97,7 +99,7 @@
           <span>Github URL</span>
           <span class="any">任意</span>
         </div>
-        <input type="url" name="github" value="{{ old('github') }}" placeholder="http://...">
+        <input type="url" name="github" value="{{ old('github', $work->github) }}" placeholder="http://...">
         @if ($errors->has('github'))
             <span class="help-block">
                 <strong>{{ $errors->first('github') }}</strong>
@@ -108,5 +110,6 @@
       </form>
     </section>
   </div>
+  @endforeach
 </body>
 </html>

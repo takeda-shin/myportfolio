@@ -29,14 +29,14 @@
         <a href="{{ action('AboutsController@create', $post->id ) }}" class="button">ABOUTS</a>
       @endisset
       @endforeach
-      <a class="button" href="action('WorksController@index', $post->id">WORKS</a>
+      <a class="button" href="{{ action('WorksController@index', $post->id) }}">WORKS</a>
       <a class="button" href="#others">OTHERS</a>
       <a class="button" href="{{ action('PostsController@show', $post->id ) }}">BACK</a>
     </div>
   </div>
   <div class="container">
     <section class="add-contents" id="contact">
-      <form method="POST" action="#" class="add-form" enctype="multipart/form-data">
+      <form method="POST" action="{{ action('WorksController@store', $post) }}" class="add-form" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="title">
           <span>制作物のタイトル</span>
