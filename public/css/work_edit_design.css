@@ -85,9 +85,14 @@ body {
   overflow: auto;
 }
 
-.box-line {
+.box-one {
   display: block;
   height: 30vh;
+}
+.box-line {
+  height: 30vh;
+  display:flex;
+  flex-wrap:wrap;
 }
 
 .add-box {
@@ -124,8 +129,8 @@ body {
 
 .box {
   width: calc(100% / 3);
-  height: 100%;
-  float: left;
+  height: 30vh;
+  box-sizing: border-box;
 }
 
 /* ADD EDIT FORM*/
