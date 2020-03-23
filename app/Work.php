@@ -15,6 +15,6 @@ class Work extends Model
     'github'];
 
     public function post() {
-    return $this->belongsTo('App\Post');
+        return $this->belongsTo('App\Post');
     }
 }
