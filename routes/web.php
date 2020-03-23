@@ -31,6 +31,7 @@ Route::get('/works/{post}/create', 'WorksController@create')->middleware('auth')
 Route::post('/works/{post}', 'WorksController@store')->middleware('auth');
 Route::get('/works/{work}/edit/', 'WorksController@edit')->middleware('auth');
 Route::patch('/works/{work}', 'WorksController@update')->middleware('auth');
+Route::delete('/works/{work}', 'WorksController@destroy')->middleware('auth');
 
 
 

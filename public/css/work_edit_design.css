@@ -132,6 +132,9 @@ body {
   height: 30vh;
   box-sizing: border-box;
 }
+.del {
+  text-decoration: none;
+}
 
 /* ADD EDIT FORM*/
 .add-contents {
