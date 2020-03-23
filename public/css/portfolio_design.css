@@ -259,14 +259,37 @@ ul > li {
 }
 
 .works-wrapper {
-  display: table;
-  width: 100%;
+  /* display: table; */
   margin-top: 60px;
   table-layout: fixed;
 }
+.works-one {
+  width: 25%;
+  margin: 60px auto 0;
+}
+.works-two {
+  width: 50%;
+  margin: 60px auto 0;
+}
+.works-three {
+  width: 75%;
+  margin: 60px auto 0;
+}
+.works-four {
+  width: 100%;
+}
+.works-upper-four {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
 .work-box {
   position: relative;
-  display: table-cell;
+  display: inline-block;
+  /* display: table-cell; */
+  width: 25%;
+  height: 50vh;
 }
 .work-box::after {
   content: '';
@@ -274,28 +297,19 @@ ul > li {
   top: 50%;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 25vh;
   background: no-repeat;
   background-size: 100% 100%;
   opacity: 0.2;
-  transform: scaleY(-1);
-}
-.work-box.tree::after {
-  background-image: url('../images/tree.jpg')
-}
-.work-box.building::after {
-  background-image: url('../images/building.jpg')
-}
-.work-box.lake::after {
-  background-image: url('../images/lake.jpg')
-}
-.work-box.sky::after {
-  background-image: url('../images/sky.jpg')
+  background-image: url('../images/tree.jpg');
 }
 .work-image {
   display: block;
+  position: absolute;
+  height: 25vh;
   width: 100%;
   margin: 0 0 60%;
+  padding-top:0%;
 }
 
 .work-description{
@@ -303,15 +317,15 @@ ul > li {
   top: 50%;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 25vh;
   z-index: 1;
   overflow-y: auto;
 }
 .work-description-inner {
   display: table;
   width: 100%;
-  height: 100%;
   padding: 20px;
+  height: 25vh;
 }
 .work-text {
   display: table-cell;
@@ -323,6 +337,8 @@ ul > li {
   width: 60%;
   margin-top: 20px;
   padding: 3px;
+  display: block;
+  margin: 20px auto 0;
 }
 .button-ghost {
   border: 1px solid #fff;
@@ -330,7 +346,7 @@ ul > li {
 }
 /* 上下反転 */
 .work-box:nth-child(odd) .work-image {
-  margin: 60% 0 0;
+  margin: 50% 0 0;
 }
 .work-box:nth-child(odd) .work-description,
 .work-box:nth-child(odd)::after {

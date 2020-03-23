@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;//認証ユーザー取得に必要 
 use App\Post;
+use App\Work;
 use App\Http\Requests\PostRequest;
 
 class PostsController extends Controller
@@ -22,10 +23,15 @@ class PostsController extends Controller
 
     public function show ($id) {
         $authUser = Auth::user(); // 認証ユーザー取得
-        $post = Post::find($id);
+        $post = Post::orderBy('created_at', 'desc')->find($id);
+        $posts = Post::withCount('works')->get();
+        foreach($posts as $work_counts) {
+          $works_count = $work_counts->works_count;
+        }
         $params = [
             'authUser' => $authUser,
             'post' => $post,
+            'works_count' => $works_count,
         ];
         return view('posts.show', $params);
     }
