@@ -262,17 +262,18 @@ ul > li {
   /* display: table; */
   margin-top: 60px;
   table-layout: fixed;
+  width: 100%;
 }
 .works-one {
-  width: 25%;
+  width: 100%;
   margin: 60px auto 0;
 }
 .works-two {
-  width: 50%;
+  width: 100%;
   margin: 60px auto 0;
 }
 .works-three {
-  width: 75%;
+  width: 100%;
   margin: 60px auto 0;
 }
 .works-four {
