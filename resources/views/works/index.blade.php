@@ -30,7 +30,6 @@
       @endisset
       @endforeach
       <a class="button" href="{{ action('WorksController@index', $post->id) }}">WORKS</a>
-      <a class="button" href="#others">OTHERS</a>
       <a class="button" href="{{ action('PostsController@show', $post->id ) }}">BACK</a>
     </div>
   </div>
