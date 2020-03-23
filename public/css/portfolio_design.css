@@ -279,9 +279,9 @@ ul > li {
   width: 100%;
 }
 .works-upper-four {
+  overflow-y: hidden;
   overflow-x: auto;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
 }
 
 .work-box {
