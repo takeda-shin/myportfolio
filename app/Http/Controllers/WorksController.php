@@ -67,4 +67,11 @@ class WorksController extends Controller
         $post->works()->save($work);
         return redirect()->action('PostsController@show', $post);
     }
+
+    public function destroy($id) {
+        $work = Work::findOrFail($id);
+        $post = Post::findOrFail($work['post_id']);
+        $work->delete();
+        return view('works.index')->with('post', $post);
+    }
 }

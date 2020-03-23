@@ -53,10 +53,15 @@
         <div class="image">
         <a href="{{ action('WorksController@edit', $work->id ) }}"><img src="{{ asset('storage/image/' . $work->image) }}" alt="" style="height: 100%; width: 80%;" /></a>
         </div>
-        <p>{{ $work->title }}</p>
+        <p class="work-title">{{ $work->title }}<a href= "#" class="del" data-id= "{{ $work->id }}" > [削除]</a></p>
+        <form method="post" action="{{ action('WorksController@destroy', $work->id) }}" id="form_{{ $work->id }}">
+            {{ csrf_field() }}
+            {{ method_field('delete') }}
+        </form>
       </div>
       @endforeach
     </div>
   </div>
+  <script src="/js/main.js"></script>
 </body>
 </html>
