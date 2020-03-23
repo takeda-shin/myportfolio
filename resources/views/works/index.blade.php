@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="box-line">
+    <div class="box-one">
       <div class="add-box">
         <div class="image add-image">
           <a class="add-link" href="{{ action('WorksController@create', $post->id ) }}"></a>
@@ -45,44 +45,18 @@
       </div>
     </div>
 
-    @foreach ($post->works as $work)
+    <!-- <div class="box-line">
+      <div class="box"> -->
     <div class="box-line">
+      @foreach ($post->works as $work)
       <div class="box">
         <div class="image">
         <a href="{{ action('WorksController@edit', $work->id ) }}"><img src="{{ asset('storage/image/' . $work->image) }}" alt="" style="height: 100%; width: 80%;" /></a>
         </div>
         <p>{{ $work->title }}</p>
       </div>
-      <div class="box">
-        <div class="image">
-        </div>
-        <p>title</p>
-      </div>
-      <div class="box">
-        <div class="image">
-        </div>
-        <p>title</p>
-      </div>
+      @endforeach
     </div>
-
-    <div class="box-line">
-      <div class="box">
-        <div class="image">
-        </div>
-        <p>title</p>
-      </div>
-      <div class="box">
-        <div class="image">
-        </div>
-        <p>title</p>
-      </div>
-      <div class="box">
-        <div class="image">
-        </div>
-        <p>title</p>
-      </div>
-    </div>
-    @endforeach
   </div>
 </body>
 </html>
