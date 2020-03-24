@@ -13,9 +13,7 @@ class PostsController extends Controller
 {
     public function index () {
         $authUser = Auth::user();
-        // eval(\Psy\sh());
         $id = Auth::id();
-        // $user = User::find($id);
         $user_post = Post::where('user_id', $id)->first();
 
         $posts = Post::latest()->get();
@@ -24,7 +22,6 @@ class PostsController extends Controller
             'post' => $posts,
             'user_post' => $user_post,
         ];
-        // dd($posts->toArray()); //dump die
         return view('posts.index', $params);
     }
 
@@ -32,6 +29,8 @@ class PostsController extends Controller
         $authUser = Auth::user(); // 認証ユーザー取得
         $post = Post::orderBy('created_at', 'desc')->find($id);
         $posts = Post::withCount('works')->get();
+        $admin_id = Auth::id();
+
         foreach($posts as $work_counts) {
           $works_count = $work_counts->works_count;
         }
@@ -39,6 +38,7 @@ class PostsController extends Controller
             'authUser' => $authUser,
             'post' => $post,
             'works_count' => $works_count,
+            'admin_id' => $admin_id,
         ];
         return view('posts.show', $params);
     }
