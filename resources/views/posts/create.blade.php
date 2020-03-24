@@ -24,7 +24,6 @@
         <div class="col-md-8 col-md-offset-2">
           <form class="contact-form php-mail-form" method="post" action= "{{ url('/posts') }}">
             {{ csrf_field() }}
-            <!-- <input type="hidden" name="user_id" value="1"> -->
             <div class="form-group">
               <input type="hidden" name="user_id" value="1">
               <input type="" name="title" class="form-control" id="contact-name" placeholder="Title" data-rule="minlen:4">
