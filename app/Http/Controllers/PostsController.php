@@ -46,8 +46,10 @@ class PostsController extends Controller
     public function create() {
         $authUser = Auth::user(); // 認証ユーザー取得
         // $items = Post::with('user')->get();
+        $user_id = Auth::id();
         $params = [
             'authUser' => $authUser,
+            'user_id' => $user_id,
             // 'items' => $items,
         ];
         return view('posts.create', $params); 
@@ -59,7 +61,7 @@ class PostsController extends Controller
         $post->body = $request->body;
         $post->user_id = $request->user_id;
         $post->save();
-        return view('posts.show')->with('post', $post);
+        return redirect()->action('PostsController@show', $post);
     }
 
     public function edit ($id) {
