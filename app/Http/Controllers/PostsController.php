@@ -6,16 +6,23 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;//認証ユーザー取得に必要 
 use App\Post;
 use App\Work;
+use App\User;
 use App\Http\Requests\PostRequest;
 
 class PostsController extends Controller
 {
     public function index () {
         $authUser = Auth::user();
+        // eval(\Psy\sh());
+        $id = Auth::id();
+        // $user = User::find($id);
+        $user_post = Post::where('user_id', $id)->first();
+
         $posts = Post::latest()->get();
         $params = [
             'authUser' => $authUser,
             'post' => $posts,
+            'user_post' => $user_post,
         ];
         // dd($posts->toArray()); //dump die
         return view('posts.index', $params);
