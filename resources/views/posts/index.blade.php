@@ -21,7 +21,11 @@
         <a href="{{ route('register') }}" class="button button-showy">新規登録</a>
         @endif
       @else
+      @empty($user_post)
         <a href="{{ url('/posts/create') }}" class="button">ポートフォリオを作る</a>
+      @else
+        <a href="{{ url('/posts', $user_post->id) }}" class="button">ポートフォリオを確認</a>
+      @endif
         <a href="{{ route('logout') }}" class="button button-showy"
           onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
@@ -33,7 +37,8 @@
       @endguest
     </div>
   </header>
-  <div class="container-main__content">
+  <!-- トップ画面にポートフォリオ一覧を表示させる場合は以下を利用 -->
+  <!-- <div class="container-main__content">
     <ul>
       @if(count($post) > 0)
         @foreach ($post as $post)
@@ -48,7 +53,7 @@
         @endforeach
       @endif
     </ul>
-  </div>
+  </div> -->
   <script src="/js/placeholders.min.js"></script>
   <script src="/js/main.js"></script>
 </body>
