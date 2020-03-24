@@ -25,7 +25,7 @@
           <form class="contact-form php-mail-form" method="post" action= "{{ url('/posts') }}">
             {{ csrf_field() }}
             <div class="form-group">
-              <input type="hidden" name="user_id" value="1">
+              <input type="hidden" name="user_id" value="{{ $user_id }}">
               <input type="" name="title" class="form-control" id="contact-name" placeholder="Title" data-rule="minlen:4">
               <!-- エラーメッセージ -->
               @if ($errors->has('title'))
