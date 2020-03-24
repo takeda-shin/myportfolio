@@ -24,7 +24,7 @@
     <div class="button-box">
       <a class="button" href="{{ action('PostsController@edit', $post->id ) }}">TITLE</a>
       @foreach ($post->abouts as $about)
-      @isset($about)
+      @isset($post->abouts)
         <a href="{{ action('AboutsController@edit', $post->id ) }}" class="button">ABOUTS</a>
       @else
         <a href="{{ action('AboutsController@create', $post->id ) }}" class="button">ABOUTS</a>
