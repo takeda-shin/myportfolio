@@ -22,13 +22,11 @@
     </div>
     <div class="button-box">
       <a class="button" href="{{ action('PostsController@edit', $post->id ) }}">TITLE</a>
-      @foreach ($post->abouts as $about)
-      @isset($about)
+      @isset($post->about)
         <a href="{{ action('AboutsController@edit', $post->id ) }}" class="button">ABOUTS</a>
       @else
         <a href="{{ action('AboutsController@create', $post->id ) }}" class="button">ABOUTS</a>
       @endisset
-      @endforeach
       <a class="button" href="{{ action('WorksController@index', $post->id) }}">WORKS</a>
       <a class="button" href="{{ action('PostsController@show', $post->id ) }}">BACK</a>
     </div>

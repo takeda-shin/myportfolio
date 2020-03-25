@@ -12,44 +12,21 @@
 
 <body>
   <div class="menu-bar">
-    <!-- <a href="{{ url('/') }}" class="header-back">Back</a>
-    <a href="{{ url('/') }}" class="header-back">Logout</a>
-    <a href="{{ url('/') }}" class="header-back" data-id= "{{ $post->id }}">Delete</a>
-    <form method="post" action="{{ url('/posts', $post->id) }}" id="form_{{ $post->id }}">
-      {{ csrf_field() }}
-      {{ method_field('delete') }}
-    </form>
-    <a href="{{ url('/') }}" class="header-back">Config</a>
-    <a href="{{ url('/') }}" class="header-back">Contact</a>
-    <a href="{{ url('/') }}" class="header-back">Resume</a>
-    @foreach ($post->abouts as $about)
-    @isset($about)
-      <a href="{{ action('AboutsController@edit', $post->id ) }}" class="header-back">About</a>
-    @else
-      <a href="{{ action('AboutsController@create', $post->id ) }}" class="header-back">About</a>
-    @endisset
-    @endforeach
-    <a href="{{ url('/') }}" class="header-back">Blog</a>
-    <a href="{{ action('WorksController@index', $post->id ) }}" class="header-back">Works</a>
-    <a href="{{ action('PostsController@edit', $post->id ) }}" class="header-back">Title</a> -->
     <a href="{{ url('/') }}" class="menu-button">Back</a>
     <a href= "{{ action('PostsController@edit', $post->id ) }}" class="menu-button">Edit</a>
   </div>
 
-  @foreach ($post->abouts as $about)
   <div class="side-header">
     <div class="edit-title">
       edit TITLE
     </div>
     <div class="button-box">
       <a class="button" href="{{ action('PostsController@edit', $post->id ) }}">TITLE</a>
-      @foreach ($post->abouts as $about)
-      @isset($about)
-        <a href="{{ action('AboutsController@edit', $post->id ) }}" class="button">ABOUTS</a>
+      @isset($post->about)
+      <a href="{{ action('AboutsController@edit', $post->id ) }}" class="button">ABOUTS</a>
       @else
-        <a href="{{ action('AboutsController@create', $post->id ) }}" class="button">ABOUTS</a>
+      <a href="{{ action('AboutsController@create', $post->id ) }}" class="button">ABOUTS</a>
       @endisset
-      @endforeach
       <a class="button" href="{{ action('WorksController@index', $post->id) }}">WORKS</a>
       <a class="button" href="{{ action('PostsController@show', $post->id ) }}">BACK</a>
     </div>
@@ -84,6 +61,5 @@
       </form>
     </section>
   </div>
-  @endforeach
 </body>
 </html>
