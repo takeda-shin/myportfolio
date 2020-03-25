@@ -42,7 +42,10 @@ TECH::CAMP福岡校にてRuby on Railsでのアプリ開発の基礎を学んだ
 
 ## DEMO
 ### トップページ
-![トップ](https://user-images.githubusercontent.com/55591073/77496802-29ddc580-6e8f-11ea-8bab-e1bd7193b4ae.png)
+![トップ2](https://user-images.githubusercontent.com/55591073/77502685-dd9a8180-6e9e-11ea-81b2-f0fa9f4b5ed0.png)
+### 新規登録・ログイン
+![新規登録・ログイン](https://user-images.githubusercontent.com/55591073/77502806-42ee7280-6e9f-11ea-9eae-79a51e499f2b.png)
+
 
 
 
