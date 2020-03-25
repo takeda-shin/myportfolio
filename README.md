@@ -23,8 +23,8 @@ ID: admin<br>
 Pass: pass0318<br>
 <br>
 テストアカウント<br>
-mail:  <br>
-pass:  <br>
+mail: admin@gmail.com <br>
+pass: pass0318<br>
 
 ## 制作背景
 
