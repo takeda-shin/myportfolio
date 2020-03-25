@@ -14,9 +14,28 @@
 ・問い合わせフォーム（ログイン時に設定したアドレスにメールが届く）<br>
 
 ## 接続先情報
-http://myportfolio-iamhere.herokuapp.com/
+
+http://myportfolio-iamhere.herokuapp.com/ <br>
 ID: admin<br>
 Pass: pass0318<br>
+<br>
+テストアカウント<br>
+mail:  <br>
+pass:  <br>
+
+## 制作背景
+
+TECH::CAMP福岡校にてRuby on Railsでのアプリ開発の基礎を学んだ筆者が<br>
+以下の目的により開発したアプリになります。<br>
+<br>
+・開発現場での需要の多いphp、およびフレームワーク「Laravel」を用いた開発への挑戦<br>
+・開発環境の構築から基礎学習・アプリ開発までを自分1人の力で行う訓練<br>
+・HTML/CSSを用いたデザインの学習<br>
+
+## DEMO
+
+
+
 
 
 
