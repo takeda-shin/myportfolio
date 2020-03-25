@@ -22,7 +22,7 @@
     </div>
     <div class="button-box">
       <a class="button" href="{{ action('PostsController@edit', $post->id ) }}">TITLE</a>
-      @isset($post->abouts)
+      @isset($post->about)
       <a href="{{ action('AboutsController@edit', $post->id ) }}" class="button">ABOUTS</a>
       @else
       <a href="{{ action('AboutsController@create', $post->id ) }}" class="button">ABOUTS</a>
