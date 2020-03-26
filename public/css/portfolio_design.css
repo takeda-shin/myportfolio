@@ -259,21 +259,21 @@ ul > li {
 }
 
 .works-wrapper {
-  /* display: table; */
+  display: table;
   margin-top: 60px;
   table-layout: fixed;
   width: 100%;
 }
 .works-one {
-  width: 100%;
+  width: 25%;
   margin: 60px auto 0;
 }
 .works-two {
-  width: 100%;
+  width: 50%;
   margin: 60px auto 0;
 }
 .works-three {
-  width: 100%;
+  width: 75%;
   margin: 60px auto 0;
 }
 .works-four {
@@ -288,7 +288,7 @@ ul > li {
 .work-box {
   position: relative;
   display: inline-block;
-  /* display: table-cell; */
+  display: table-cell;
   width: 25%;
   height: 50vh;
 }

@@ -84,8 +84,7 @@
   @endisset
   @endforeach
 
-  @foreach ($post->works as $work)
-  @isset($work)
+  @isset($post->works)
   <section class="works">
     <h2 class="heading">WORKS</h2>
     @if ($works_count == 1)
@@ -99,6 +98,7 @@
     @elseif ($works_count >= 5)
     <div class="works-wrapper works-upper-four">
     @endif
+      @foreach ($post->works as $work)
       <div class="work-box">
         <img class="work-image" src="{{ asset('storage/image/' . $work->image) }}" alt="制作事例１">
         <div class="work-description">
@@ -113,10 +113,10 @@
           </div>
         </div>
       </div>
+      @endforeach
     </div>
   </section>
   @endisset
-  @endforeach
 
   <section class="contact" id="contact">
     <h2 class="heading">CONTACT</h2>
