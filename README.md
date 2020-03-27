@@ -54,12 +54,10 @@ TECH::CAMP福岡校にてRuby on Railsでのアプリ開発の基礎を学んだ
 ・デザインをアプリの雰囲気に合わせたものに変更<br>
 
 ### ポートフォリオ作成画面
-![ポートフォリオ作成](https://user-images.githubusercontent.com/55591073/77503659-877b0d80-6ea1-11ea-9f9d-b8711ecefbcf.png)
+![作成画面](https://user-images.githubusercontent.com/55591073/77754438-b0043280-706e-11ea-8a96-2d8c8535fe9e.png)
 トップページの「ポートフォリオを作る」ボタンより遷移。<br>
 ポートフォリオのタイトルとキャッチコピーを入力し、<br>
 「create」ボタンを押すことでポートフォリオのメイン画面と問い合わせフォームが作成される。<br>
-【今後実装したい機能・内容】<br>
-・デザインをアプリの雰囲気に合わせたものに変更<br>
 
 ### ポートフォリオメイン画面
 ![メイン画面](https://user-images.githubusercontent.com/55591073/77504006-72eb4500-6ea2-11ea-9c90-075e7f996aa2.png)
