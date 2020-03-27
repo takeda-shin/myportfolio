@@ -99,7 +99,11 @@
     <div class="works-wrapper works-upper-four">
     @endif
       @foreach ($post->works as $work)
+      @if($works_count >= 5)
+      <div class="work-box-upper-four">
+      @else
       <div class="work-box">
+      @endif
         <img class="work-image" src="{{ asset('storage/image/' . $work->image) }}" alt="制作事例１">
         <div class="work-description">
           <div class="work-description-inner">

@@ -280,6 +280,7 @@ ul > li {
   width: 100%;
 }
 .works-upper-four {
+  display: block;
   overflow-y: hidden;
   overflow-x: auto;
   white-space: nowrap;
@@ -293,6 +294,24 @@ ul > li {
   height: 50vh;
 }
 .work-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 25vh;
+  background: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.2;
+  background-image: url('../images/tree.jpg');
+}
+.work-box-upper-four {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  height: 50vh;
+}
+.work-box-upper-four::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -346,11 +365,14 @@ ul > li {
   background-color: rgba(255,255,255,0.15)
 }
 /* 上下反転 */
-.work-box:nth-child(odd) .work-image {
+.work-box:nth-child(odd) .work-image,
+.work-box-upper-four:nth-child(odd) .work-image {
   margin: 50% 0 0;
 }
 .work-box:nth-child(odd) .work-description,
-.work-box:nth-child(odd)::after {
+.work-box:nth-child(odd)::after,
+.work-box-upper-four:nth-child(odd) .work-description,
+.work-box-upper-four:nth-child(odd)::after {
   top: 0;
 }
 
