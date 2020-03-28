@@ -84,7 +84,8 @@
   @endisset
   @endforeach
 
-  @isset($post->works)
+  @if($works_count == 0)
+  @else
   <section class="works">
     <h2 class="heading">WORKS</h2>
     @if ($works_count == 1)
@@ -120,7 +121,7 @@
       @endforeach
     </div>
   </section>
-  @endisset
+  @endif
 
   <section class="contact" id="contact">
     <h2 class="heading">CONTACT</h2>
