@@ -127,7 +127,7 @@
 
         <div class="title">
           <span>twitter</span>
-          <span class="required">必須</span>
+          <span class="any">任意</span>
         </div>
         <input type="text" name="twitter" value="{{ old('twitter', $about->twitter) }}" placeholder="twitterアカウントのURL">
         @if ($errors->has('twitter'))
@@ -138,7 +138,7 @@
 
         <div class="title">
           <span>facebook</span>
-          <span class="required">必須</span>
+          <span class="any">任意</span>
         </div>
         <input type="text" name="facebook" value="{{ old('facebook', $about->facebook) }}" placeholder="facebookアカウントのURL">
         @if ($errors->has('facebook'))
@@ -149,7 +149,7 @@
 
         <div class="title">
           <span>instagram</span>
-          <span class="required">必須</span>
+          <span class="any">任意</span>
         </div>
         <input type="text" name="instagram" value="{{ old('instagram', $about->instagram) }}" placeholder="instagramアカウントのURL">
         @if ($errors->has('instagram'))

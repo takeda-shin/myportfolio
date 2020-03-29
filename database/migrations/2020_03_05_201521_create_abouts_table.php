@@ -24,9 +24,9 @@ class CreateAboutsTable extends Migration
             $table->string('email');
             $table->text('performance', 100);
             $table->string('image', 100);
-            $table->string('twitter', 1024);
-            $table->string('facebook', 1024);
-            $table->string('instagram', 1024);
+            $table->string('twitter', 1024)->nullable();
+            $table->string('facebook', 1024)->nullable();
+            $table->string('instagram', 1024)->nullable();
             $table->text('message');
             $table->timestamps();
             $table

@@ -23,7 +23,7 @@
     <h1 class="site-title">{{ $post->title }}</h1>
     <p class="site-description">{!! nl2br(e($post->body)) !!}</p>
     <div class="buttons">
-      <a class="button" href="#about">LEARN MORE</a>
+      <a class="button" href="#about">ABOUT ME</a>
       <a class="button button-showy" href="#contact">SEND MESSAGE</a>
     </div>
   </header>
@@ -39,6 +39,17 @@
         <div class="container__about__person__left">
           <div class="container__about__person__left__img">
           <img src="{{ asset('storage/image/' . $about->image) }}" alt="" style="height: 100%; width: 80%;" />
+          <div class="sns-box">
+            @isset($about->twitter)
+            <a class="fa fa-twitter sns-icon" href="{{ $about->twitter }}"></a>
+            @endisset
+            @isset($about->facebook)
+            <a class="fa fa-facebook sns-icon" href="{{ $about->facebook }}"></a>
+            @endisset
+            @isset($about->instagram)
+            <a class="fa fa-instagram sns-icon" href="{{ $about->instagram }}"></a>
+            @endisset
+          </div>
           </div>
         </div>
         <div class="container__about__person__right">
@@ -77,7 +88,7 @@
         </div>
       </div>
       <div class="container__about__biography">
-        {{ $about->message }}
+        <p>{{ $about->message }}</p>
       </div>
     </div>
   </section>

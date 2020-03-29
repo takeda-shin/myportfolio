@@ -170,17 +170,14 @@ body {
   height: 20vh;
   width: 100%;
 }
-.container__about__person__left__sns {
-  height: 5vh;
-  width: 100%;
+.sns-box {
+  margin-top: 10px;
 }
-
-.container__about__person__left__sns__link {
-  height: 20px;
-  width: 20px;
-  display: inline-block;
-  margin: 5% 5% 0;
-  background-color: black;
+.sns-icon {
+   font-size: 2rem;
+   margin-right: 10%;
+   text-decoration: none;
+   color: black;
 }
 
 
@@ -242,10 +239,14 @@ body {
 .container__about__biography {
   height: 20vh;
   box-sizing: border-box;
-  padding: 2vh 10% 2vh;
+  padding: 0 10% 2vh;
   text-align: left;
   white-space: pre-wrap;
   word-wrap: break-word;
+  vertical-align: top;
+}
+.container__about__biography p {
+  margin-top: -5%;
 }
 
 ul > li {
