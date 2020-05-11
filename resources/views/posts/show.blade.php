@@ -38,8 +38,7 @@
       <div class="container__about__person">
         <div class="container__about__person__left">
           <div class="container__about__person__left__img">
-          <img src="{{ $path }}" alt="" style="height: 100%; width: 80%;" />
-          <!-- <img src="{{ asset('storage/image/' . $about->image) }}" alt="" style="height: 100%; width: 80%;" /> -->
+          <img src="{{ asset('storage/image/' . $about->image) }}" alt="" style="height: 100%; width: 80%;" />
           <div class="sns-box">
             @isset($about->twitter)
             <a class="fa fa-twitter sns-icon" href="{{ $about->twitter }}"></a>
