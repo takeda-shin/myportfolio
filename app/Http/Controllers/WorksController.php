@@ -24,8 +24,21 @@ class WorksController extends Controller
             'image' => 'file|image|mimes:jpg,jpeg,png'
         ]);
 
-        $filename = $request->image->store('public/image');
-        $post->image = basename($filename);
+        // $filename = $request->image->store('public/image');
+        // $post->image = basename($filename);
+
+        if ( app()->isLocal() || app()->runningUnitTests() ) {
+            # 開発環境
+            // $path = $image->store('public/images');
+            // $post->image = Storage::url($path);
+            $filename = $request->image->store('public/image');
+            $post->image = basename($filename);
+        }
+        else {
+            # 本番環境
+            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $post->image = Storage::disk('s3')->url($path);
+        }
 
         $work = new Work([
             'title' => $request->title,
@@ -54,8 +67,21 @@ class WorksController extends Controller
             'image' => 'file|image|mimes:jpg,jpeg,png'
         ]);
 
-        $filename = $request->image->store('public/image');
-        $work->image = basename($filename);
+        // $filename = $request->image->store('public/image');
+        // $work->image = basename($filename);
+
+        if ( app()->isLocal() || app()->runningUnitTests() ) {
+            # 開発環境
+            // $path = $image->store('public/images');
+            // $post->image = Storage::url($path);
+            $filename = $request->image->store('public/image');
+            $work->image = basename($filename);
+        }
+        else {
+            # 本番環境
+            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $work->image = Storage::disk('s3')->url($path);
+        }
 
         $post = Post::findOrFail($work['post_id']);
 

@@ -29,8 +29,24 @@ class AboutsController extends Controller
             'image' => 'file|image|mimes:jpg,jpeg,png'
         ]);
 
-        $filename = $request->image->store('public/image');
-        $post->image = basename($filename);
+        // $filename = $request->image->store('public/image');
+        // $post->image = basename($filename);
+
+        // 追加部分
+        if ( app()->isLocal() || app()->runningUnitTests() ) {
+            # 開発環境
+            // $path = $image->store('public/images');
+            // $post->image = Storage::url($path);
+            $filename = $request->image->store('public/image');
+            $post->image = basename($filename);
+        }
+        else {
+            # 本番環境
+            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $post->image = Storage::disk('s3')->url($path);
+        }
+        // 追加部分
+
 
         $about = new About([
             'family_name' => $request->family_name,
@@ -55,8 +71,21 @@ class AboutsController extends Controller
             'image' => 'file|image|mimes:jpg,jpeg,png'
         ]);
 
-        $filename = $request->image->store('public/image');
-        $about->image = basename($filename);
+        // $filename = $request->image->store('public/image');
+        // $about->image = basename($filename);
+
+        if ( app()->isLocal() || app()->runningUnitTests() ) {
+            # 開発環境
+            // $path = $image->store('public/images');
+            // $post->image = Storage::url($path);
+            $filename = $request->image->store('public/image');
+            $about->image = basename($filename);
+        }
+        else {
+            # 本番環境
+            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $about->image = Storage::disk('s3')->url($path);
+        }
 
         $post = Post::findOrFail($about['post_id']);
 
