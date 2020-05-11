@@ -36,7 +36,7 @@ class WorksController extends Controller
         }
         else {
             # 本番環境
-            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $path = Storage::disk('s3')->put('/', $request->image, 'public');
             $post->image = Storage::disk('s3')->url($path);
         }
 
@@ -79,7 +79,7 @@ class WorksController extends Controller
         }
         else {
             # 本番環境
-            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $path = Storage::disk('s3')->put('/', $request->image, 'public');
             $work->image = Storage::disk('s3')->url($path);
         }
 

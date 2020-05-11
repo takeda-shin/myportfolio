@@ -42,7 +42,7 @@ class AboutsController extends Controller
         }
         else {
             # 本番環境
-            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $path = Storage::disk('s3')->put('/', $request->image, 'public');
             $post->image = Storage::disk('s3')->url($path);
         }
         // 追加部分
@@ -83,7 +83,7 @@ class AboutsController extends Controller
         }
         else {
             # 本番環境
-            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $path = Storage::disk('s3')->put('/', $request->image, 'public');
             $about->image = Storage::disk('s3')->url($path);
         }
 
