@@ -41,7 +41,7 @@ class PostsController extends Controller
             'post' => $post,
             'works_count' => $works_count,
             'admin_id' => $admin_id,
-            'path' => $path
+            'path' => $path,
         ];
         return view('posts.show', $params);
     }
