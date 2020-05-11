@@ -14,6 +14,8 @@ class Work extends Model
     'link',
     'github'];
 
+    protected $table = 'works';
+
     public function post() {
         return $this->belongsTo('App\Post');
     }
