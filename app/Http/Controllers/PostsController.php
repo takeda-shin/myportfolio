@@ -31,6 +31,8 @@ class PostsController extends Controller
         $posts = Post::withCount('works')->get();
         $admin_id = Auth::id();
 
+        $url = Storage::disk('s3')->url('/'.$post->abouts->image);
+
         foreach($posts as $work_counts) {
           $works_count = $work_counts->works_count;
         }
@@ -39,6 +41,7 @@ class PostsController extends Controller
             'post' => $post,
             'works_count' => $works_count,
             'admin_id' => $admin_id,
+            'url' => $url,
         ];
         return view('posts.show', $params);
     }
