@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\About;
+use Storage;
 
 class AboutsController extends Controller
 {

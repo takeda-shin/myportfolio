@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Work;
+use Storage;
 
 class WorksController extends Controller
 {
