@@ -30,8 +30,6 @@ class PostsController extends Controller
         $post = Post::orderBy('created_at', 'desc')->find($id);
         $posts = Post::withCount('works')->get();
         $admin_id = Auth::id();
-        
-        $path = Storage::disk('s3')->url($post->abouts->image);
 
         foreach($posts as $work_counts) {
           $works_count = $work_counts->works_count;
@@ -41,7 +39,6 @@ class PostsController extends Controller
             'post' => $post,
             'works_count' => $works_count,
             'admin_id' => $admin_id,
-            'path' => $path,
         ];
         return view('posts.show', $params);
     }
