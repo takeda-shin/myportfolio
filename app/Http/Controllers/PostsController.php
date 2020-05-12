@@ -33,10 +33,6 @@ class PostsController extends Controller
         $posts = Post::withCount('works')->get();
         $admin_id = Auth::id();
 
-        $disk = Storage::disk('s3');
-
-
-
         foreach($posts as $work_counts) {
           $works_count = $work_counts->works_count;
         }
@@ -45,7 +41,6 @@ class PostsController extends Controller
             'post' => $post,
             'works_count' => $works_count,
             'admin_id' => $admin_id,
-            'disk' => $disk,
         ];
         return view('posts.show', $params);
     }
