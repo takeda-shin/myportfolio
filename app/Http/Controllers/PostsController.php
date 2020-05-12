@@ -33,14 +33,7 @@ class PostsController extends Controller
         $posts = Post::withCount('works')->get();
         $admin_id = Auth::id();
 
-        // image
-        $about_image = About::whereHas('post', function($q){$q->where('image');})->get();
-        $work_images = Work::whereHas('post', function($q){$q->where('image');})->get();
-
         $disk = Storage::disk('s3');
-        $about_content = $disk->get($about_image);
-        $work_contents = $disk->get($work_images);
-        // image
 
 
 
@@ -52,9 +45,7 @@ class PostsController extends Controller
             'post' => $post,
             'works_count' => $works_count,
             'admin_id' => $admin_id,
-
-            'about_content' => $about_content,
-            'work_contents' => $work_contents,
+            'disk' => $disk,
         ];
         return view('posts.show', $params);
     }
