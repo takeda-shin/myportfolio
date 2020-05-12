@@ -34,10 +34,10 @@ class PostsController extends Controller
 
         // image
         $about = $post->about;
-        $about_image = (string)$about['image'];
+        $about_image = $about('image');
 
         $works = $post->works;
-        $work_images = (string)$works['image'];
+        $work_images = $works('image');
 
         $disk = Storage::disk('s3');
         $about_content = $disk->get($about_image);
