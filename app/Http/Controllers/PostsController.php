@@ -33,7 +33,7 @@ class PostsController extends Controller
         $admin_id = Auth::id();
 
         // image
-        $about = $post->about;
+        $about = $post->abouts;
         $about_image = $about('image');
 
         $works = $post->works;
