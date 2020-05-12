@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;//認証ユーザー取得に必要 
 use App\Post;
 use App\Work;
+use App\About;
 use App\User;
 use App\Http\Requests\PostRequest;
 
@@ -31,6 +32,20 @@ class PostsController extends Controller
         $posts = Post::withCount('works')->get();
         $admin_id = Auth::id();
 
+        // image
+        $about = $post->about;
+        $about_image = $about['image'];
+
+        $works = $post->works;
+        $work_images = $works['image'];
+
+        $disk = Storage::disk('s3');
+        $about_content = $disk->get($about_image);
+        $work_contents = $disk->get($work_images);
+        // image
+
+
+
         foreach($posts as $work_counts) {
           $works_count = $work_counts->works_count;
         }
@@ -39,6 +54,9 @@ class PostsController extends Controller
             'post' => $post,
             'works_count' => $works_count,
             'admin_id' => $admin_id,
+            
+            'about_content' => $about_content,
+            'work_contents' => $work_contents,
         ];
         return view('posts.show', $params);
     }
