@@ -9,6 +9,7 @@ use App\Work;
 use App\About;
 use App\User;
 use App\Http\Requests\PostRequest;
+use Storage;
 
 class PostsController extends Controller
 {
@@ -33,11 +34,8 @@ class PostsController extends Controller
         $admin_id = Auth::id();
 
         // image
-        $about = $post->abouts;
-        $about_image = $about('image');
-
-        $works = $post->works;
-        $work_images = $works('image');
+        $about_image = About::whereHas('post', function($q){$q->where('image');})->get();
+        $work_images = Work::whereHas('post', function($q){$q->where('image');})->get();
 
         $disk = Storage::disk('s3');
         $about_content = $disk->get($about_image);
